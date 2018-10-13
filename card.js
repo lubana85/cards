@@ -42,14 +42,14 @@ function generate() {
  * isStraight function
  * returns true if the cards array contains a straight or straight flush
  */
-function isStraight(cards) {
-  cards.sort(function(a, b) {
+function isStraight(c) {
+  c.sort(function(a, b) {
    	return a.number - b.number;
   });
-  return (cards[0].number + 1 === cards[1].number || (cards[0].number === 1 && cards[4].number === 13)) &&
-         (cards[1].number + 1 === cards[2].number) &&
-         (cards[2].number + 1 === cards[3].number) &&
-         (cards[3].number + 1 === cards[4].number);
+  return (c[0].number + 1 == c[1].number || (c[0].number == 1 && c[4].number == 13)) &&
+         (c[1].number + 1 == c[2].number) &&
+         (c[2].number + 1 == c[3].number) &&
+         (c[3].number + 1 == c[4].number);
 }
 
 /************************/
