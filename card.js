@@ -5,9 +5,9 @@ class Card {
   /*
    * Constructor
    */
-	constructor(suit, number){
-		this.suit = suit;
+	constructor(number, suit){
 		this.number = number;
+		this.suit = suit;
   }
 }
 
@@ -16,18 +16,20 @@ class Card {
  * returns an array of five cards.
  */
 function generate() {
-	var suits = ["h","s","c","d"];
 	var numbers = ["a","2","3","4","5","6","7","8","9","10","j","q","k"];
-	
+	var suits = ["h","s","c","d"];
 	var cards = [];
 	var total = 5;
 	
-	for (index = 1; index < total; index++) {
-		var i = Math.floor(Math.random() * 4); 
-		var j = Math.floor(Math.random() * 13);  
-		var card = new Card(suits[i], numbers[j]);
+	for (index = 0; index < total; index++) {
+		var i = Math.floor(Math.random() * 13); 
+		var j = Math.floor(Math.random() * 4);  
+		console.log(i);
+		console.log(j);
+		
+		var card = new Card(numbers[i], suits[j]);
 		// Check if it's a repeated card
-		if (cards.find(card => card.suit === suits[i] && card.number === numbers[j])) {
+		if (cards.find(card => card.number === numbers[i] && card.suit === suits[j])) {
 			index = index - 1;
 		} else {
 			cards.push(card);
