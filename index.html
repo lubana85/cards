@@ -23,7 +23,7 @@ layout: default
        }
         
         function checkIfStraight() {
-            if (cards) {
+            if (cards.length > 0) {
                 var result = isStraight(cards);
                 var label = document.createElement('h3');
                 label.innerHTML = 'Result: ' + result;
