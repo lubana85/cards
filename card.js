@@ -24,10 +24,8 @@ function generate() {
 	for (index = 0; index < total; index++) {
 		var i = Math.floor(Math.random() * 13); 
 		var j = Math.floor(Math.random() * 4);  
-		console.log(i);
-		console.log(j);
-		
 		var card = new Card(numbers[i], suits[j]);
+		
 		// Check if it's a repeated card
 		if (cards.find(card => card.number === numbers[i] && card.suit === suits[j])) {
 			index = index - 1;
