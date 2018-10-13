@@ -22,8 +22,8 @@ function generate() {
 	var total = 5;
 	
 	for (var index = 0; index < total; index++) {
-		var i = Math.floor(Math.random() * 13); 
-		var j = Math.floor(Math.random() * 4);  
+		var i = Math.floor(Math.random() * number.length); 
+		var j = Math.floor(Math.random() * suits.length);  
 		var card = new Card(numbers[i], suits[j]);
 		
 		// Check if it's a repeated card
