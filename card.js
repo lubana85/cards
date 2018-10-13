@@ -43,7 +43,7 @@ function generate() {
  * returns true if the cards array contains a straight or straight flush
  */
 function isStraight(c) {
-  return preg_match("/[".join(c)."]{5}/",'a234567890jqka');
+  return preg_match("/["+join(c)+"]{5}/",'a234567890jqka');
 }
 
 /************************/
