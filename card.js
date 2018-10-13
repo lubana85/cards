@@ -22,7 +22,7 @@ function generate() {
 	var total = 5;
 	
 	for (var index = 0; index < total; index++) {
-		var i = Math.floor(Math.random() * number.length); 
+		var i = Math.floor(Math.random() * numbers.length); 
 		var j = Math.floor(Math.random() * suits.length);  
 		var card = new Card(numbers[i], suits[j]);
 		
