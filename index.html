@@ -12,13 +12,9 @@ layout: default
        
       function getResults() {
           var result = generate();    
-          console.log('results');
-          console.log(result);
-
-          var cards = '';
-          for (var i = 0; i < result.length; i++ ) {
-              cards += result[i].number + result[i].suit + ', ';
-          }
+          var cards = result.map(function (card) {
+            return card.number + card.suit;
+          }).join(', ');
           var label = document.createElement('h3');
           label.innerHTML = 'Result: ' + cards;
           document.getElementById('table').innerHTML = '';
