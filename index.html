@@ -25,11 +25,12 @@ layout: default
         
         function checkIfStraight(cards) {
             cards[0].number = 7;
-            cards[1].number = 6;
+            cards[1].number = 3;
             cards[2].number = 5;
             cards[3].number = 4;
-            cards[4].number = 3;
+            cards[4].number = 6;
             
+            console.log(cards);
             
             if (cards.length > 0) {
                 var result = isStraight(cards) ? 'Straight' : 'Not Straight';
