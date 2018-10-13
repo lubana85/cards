@@ -5,7 +5,7 @@ class Card {
   /*
    * Constructor
    */
-	constructor(number, suit){
+	constructor(number, suit) {
 		this.number = number;
 		this.suit = suit;
   }
@@ -21,7 +21,7 @@ function generate() {
 	var cards = [];
 	var total = 5;
 	
-	for (index = 0; index < total; index++) {
+	for (var index = 0; index < total; index++) {
 		var i = Math.floor(Math.random() * 13); 
 		var j = Math.floor(Math.random() * 4);  
 		var card = new Card(numbers[i], suits[j]);
@@ -34,6 +34,22 @@ function generate() {
 		}
 	}
 	return cards;
+}
+
+/************************/
+
+/*
+ * isStraight function
+ * returns true if the cards array contains a straight or straight flush
+ */
+function isStraight(cards) {
+  cards.sort(function(a, b) {
+   	return a.number - b.number;
+  });
+  return (cards[0].number + 1 === cards[1].number || (cards[0].number === 1 && cards[4].number === 13)) &&
+         (cards[1].number + 1 === cards[2].number) &&
+         (cards[2].number + 1 === cards[3].number) &&
+         (cards[3].number + 1 === cards[4].number);
 }
 
 /************************/
