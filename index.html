@@ -9,10 +9,11 @@ layout: default
       /*
        * Generate Cards
        */
-       
+      var cards = [];
+        
       function getResults() {
           var result = generate();    
-          var cards = result.map(function (card) {
+          cards = result.map(function (card) {
             return card.number + card.suit;
           }).join(', ');
           var label = document.createElement('h3');
@@ -20,22 +21,35 @@ layout: default
           document.getElementById('table').innerHTML = '';
           document.getElementById('table').appendChild(label);
        }
+        
+        function checkIfStraight() {
+            var result = isStright(cards);
+            
+            var label = document.createElement('h3');
+          label.innerHTML = 'Result: ' + result;
+          document.getElementById('straight').innerHTML = '';
+          document.getElementById('straight').appendChild(label);
+        }
     </script>
  </head>
  <body>
 
   <h3>Five Random Playing Cards:</h3>
  
- <form name="myForm">
-  <table>
-    <tr><td><input type="button" onclick="getResults()" value="Generate Cards" /></td></tr> 
-  </table>
+    <input type="button" onclick="getResults()" value="Generate Cards" /></td></tr> 
+  
   <br/>
   <br/>
   
   <div id='table'>
     <!-- The Results will be displayed here -->
   </div>
-  
+
+  <br /><input type="button" onclick="checkIfStraight()" value="Is Straight" /><br />
+
+  <div id='straight'>
+    <!-- The Results will be displayed here -->
+  </div>
+
  </form>
  </body>
