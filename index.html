@@ -23,6 +23,13 @@ layout: default
        }
         
         function checkIfStraight() {
+            cards[0].number = 7;
+            cards[1].number = 6;
+            cards[2].number = 5;
+            cards[3].number = 4;
+            cards[4].number = 3;
+            
+            
             if (cards.length > 0) {
                 var result = isStraight(cards);
                 var label = document.createElement('h3');
