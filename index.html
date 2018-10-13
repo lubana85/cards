@@ -23,12 +23,13 @@ layout: default
        }
         
         function checkIfStraight() {
-            var result = isStright(cards);
-            
-            var label = document.createElement('h3');
-          label.innerHTML = 'Result: ' + result;
-          document.getElementById('straight').innerHTML = '';
-          document.getElementById('straight').appendChild(label);
+            if (cards) {
+                var result = isStraight(cards);
+                var label = document.createElement('h3');
+                label.innerHTML = 'Result: ' + result;
+                document.getElementById('straight').innerHTML = '';
+                document.getElementById('straight').appendChild(label);
+          }
         }
     </script>
  </head>
