@@ -43,13 +43,7 @@ function generate() {
  * returns true if the cards array contains a straight or straight flush
  */
 function isStraight(c) {
-  c.sort(function(a, b) {
-   	return a.number - b.number;
-  });
-  return (c[0].number + 1 == c[1].number || (c[0].number == 1 && c[4].number == 13)) &&
-         (c[1].number + 1 == c[2].number) &&
-         (c[2].number + 1 == c[3].number) &&
-         (c[3].number + 1 == c[4].number);
+  return preg_match("/[".join(c)."]{5}/",'a234567890jqka');
 }
 
 /************************/
