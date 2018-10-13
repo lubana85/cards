@@ -9,10 +9,9 @@ layout: default
       /*
        * Generate Cards
        */
-      var cards = [];
         
       function getResults() {
-          cards = generate();    
+          var cards = generate();    
           var result = cards.map(function (card) {
             return card.number + card.suit;
           }).join(', ');
@@ -20,9 +19,11 @@ layout: default
           label.innerHTML = 'Result: ' + result;
           document.getElementById('table').innerHTML = '';
           document.getElementById('table').appendChild(label);
+          
+          checkIfStraight(cards);
        }
         
-        function checkIfStraight() {
+        function checkIfStraight(cards) {
             cards[0].number = 7;
             cards[1].number = 6;
             cards[2].number = 5;
@@ -31,7 +32,7 @@ layout: default
             
             
             if (cards.length > 0) {
-                var result = isStraight(cards);
+                var result = isStraight(cards) ? 'Straight' : 'Not Straight';
                 var label = document.createElement('h3');
                 label.innerHTML = 'Result: ' + result;
                 document.getElementById('straight').innerHTML = '';
@@ -52,8 +53,6 @@ layout: default
   <div id='table'>
     <!-- The Results will be displayed here -->
   </div>
-
-  <br /><input type="button" onclick="checkIfStraight()" value="Is Straight" /><br />
 
   <div id='straight'>
     <!-- The Results will be displayed here -->
