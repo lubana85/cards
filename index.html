@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<html>
+    <head> 
+    <script type="text/javascript" src="generate.js"></script>
+    <script type="text/javascript" src="card.js"></script>
+    
+    <script>
+      /*
+       * Generate Cards
+       */
+       
+      function getResults() {
+          var result = generate();    
+          console.log('results');
+          console.log(result);
+
+          var label = document.createElement('h3');
+          label.innerHTML = 'Result: ' + result;
+          document.getElementById('table').innerHTML = '';
+          document.getElementById('table').appendChild(label);
+       }
+    </script>
+ </head>
+ <body>
+
+  <h3>Five Random Playing Cards:</h3>
+ 
+ <form name="myForm">
+  <table>
+    <tr><td><input type="button" onclick="getResults()" value="Generate Cards" /></td></tr> 
+  </table>
+  <br/>
+  <br/>
+  
+  <div id='table'>
+    <!-- The Results will be displayed here -->
+  </div>
+  
+ </form>
+ </body>
