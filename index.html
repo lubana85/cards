@@ -23,15 +23,7 @@ layout: default
           checkIfStraight(cards);
        }
         
-        function checkIfStraight(cards) {
-            cards[0].number = 7;
-            cards[1].number = 3;
-            cards[2].number = 5;
-            cards[3].number = 4;
-            cards[4].number = 6;
-            
-            console.log(cards);
-            
+        function checkIfStraight(cards) {  
             if (cards.length > 0) {
                 var result = isStraight(cards) ? 'Straight' : 'Not Straight';
                 var label = document.createElement('h3');
@@ -42,19 +34,7 @@ layout: default
         }
     </script>
  </head>
- <body>
-
-     <form method="post">
-    <button name="test">test</button>
-</form>
-
-    <?php
-    if(isset($_POST['test'])){
-      //do php stuff  
-      echo "hello";
-    }
-    ?>
-     
+ <body>  
   <h3>Five Random Playing Cards:</h3>
  
     <input type="button" onclick="getResults()" value="Generate Cards" /></td></tr> 
